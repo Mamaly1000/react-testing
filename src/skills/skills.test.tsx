@@ -1,7 +1,7 @@
 import { findByRole, fireEvent, render, screen } from "@testing-library/react";
 import SK from "./skills";
 
-describe.skip("skills", () => {
+describe.only("skills", () => {
   const randomSkills = ["javascript", "react", "node", "express"];
 
   test("skill container rendered", () => {
@@ -26,7 +26,13 @@ describe.skip("skills", () => {
     });
     fireEvent.click(startLearningButton);
 
-    const skillsElements = await screen.findAllByRole("listitem", {});
+    const skillsElements = await screen.findAllByRole(
+      "listitem",
+      {},
+      {
+        timeout: 4001,
+      }
+    );
     expect(skillsElements).toHaveLength(randomSkills.length);
   });
   test("user logged in", () => {
