@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const Greet = ({ name }: { name?: string }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <div>
       <h1>hello to you {name}</h1>
@@ -29,7 +29,7 @@ const Greet = ({ name }: { name?: string }) => {
         />
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Greet;
+export default Greet
